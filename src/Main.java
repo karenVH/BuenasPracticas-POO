@@ -100,7 +100,14 @@ public class Main {
         }
     }
 
-    // Metodo para filtrar canciones por genero
+
+    /**
+     * Metodo para filtrar canciones por genero
+     * 
+     * @param musicLibrary
+     * @param musicGender
+     * @param GenderFilter
+     */
     public static void MusicByGender(ArrayList<Song> musicLibrary,
             String musicGender, ArrayList<Song> GenderFilter) {
         int cont = 0;
@@ -112,6 +119,125 @@ public class Main {
         }
         for (int i = 0; i < cont; i++) {
             System.out.println("Titulo  " + GenderFilter.get(i).getTitle() + " " + GenderFilter.get(i).getGender());
+        }
+
+    }
+
+    /**
+     * Metodo para filtrar canciones por año
+     * 
+     * @param musicLibrary
+     * @param yearSong
+     * @param YearFilter
+     */
+    public static void MusicByYear(ArrayList<Song> musicLibrary, int yearSong,
+        ArrayList<Song> YearFilter) {
+        int cont = 0;
+        for (int i = 0; i < musicLibrary.size(); i++) {
+
+            if (musicLibrary.get(i).getDate().get(Calendar.YEAR) == yearSong) {
+                YearFilter.add(musicLibrary.get(i));
+                cont++;
+            }
+        }
+        System.out.println("estas son las canciones filtradas por el año " + yearSong);
+        for (int i = 0; i < cont; i++) {
+
+            System.out.println(YearFilter.get(i).getTitle() + " " + YearFilter.get(i).getDate());
+
+        }
+
+    }
+
+    /**
+     * Metodo pra organizar las canciones de mayor o menor
+     * 
+     * @param musicLibrary
+     */
+    public static void orderByLongerDuraton(ArrayList<Song> musicLibrary) {
+        Song aux;
+        Song aux2;
+        for (int i = 0; i < musicLibrary.size() - 1; i++) {
+            for (int x = 0; x <= musicLibrary.size() - 1; x++) {
+                if (musicLibrary.get(x).getDuration() < musicLibrary.get(x + 1).getDuration()) {
+                    //Comparamos axiliares para organizar de myor a menor
+                    aux = musicLibrary.get(x +1);
+                    aux2 = musicLibrary.get(x);
+                    aux = aux2;
+                }
+            }
+        }
+        for (int i = 5; i > 0; i++) {
+            System.out.println(musicLibrary.get(i).getTitle() + " " + musicLibrary.get(i).getDuration());
+        }
+    }
+
+    /**
+     * Metodo que ordene las canciones de menor a mayor
+     * 
+     * @param musicLibrary
+     */
+    public static void orderByShorterDuration(ArrayList<Song> musicLibrary) {
+        Song aux;
+        for (int i = 0; i < musicLibrary.size() - 1; i++) {
+            for (int x = 0; x < musicLibrary.size() - 1; x++) {
+                if (musicLibrary.get(x).getDuration() > musicLibrary.get(x + 1).getDuration()) {
+                    aux = musicLibrary.get(x);
+                    musicLibrary.set(x, musicLibrary.get(x + 1));
+                    musicLibrary.set(x - 1, aux);
+                }
+            }
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println(musicLibrary.get(i).getTitle() + " " + musicLibrary.get(i).getDuration());
+        }
+    }
+
+    /**
+     * Metodo que ordena las canciones por año
+     * 
+     * @param musicLibrary
+     */
+    public static void OrderByYear(ArrayList<Song> musicLibrary) {
+        Song aux;
+        for (int i = 0; i < musicLibrary.size() - 1; i++) {
+            for (int j = 0; j < 5 - 1; j++) {
+                if (musicLibrary.get(j).getDate().get(Calendar.YEAR) > musicLibrary.get(j + 1).getDate()
+                        .get(Calendar.YEAR)) {
+
+                    aux = musicLibrary.get(j);
+                    musicLibrary.set(j, musicLibrary.get(j + 1));
+                    musicLibrary.set(j + 1, aux);
+                }
+            }
+
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println(musicLibrary.get(i).getTitle());
+        }
+    }
+
+    /**
+     * Metodo para crear l playlist
+     * @param title
+     * @param playList
+     * @param musicLibrary
+     */
+    public static void createPlaylist(String title, ArrayList<Song> playList, ArrayList<Song> musicLibrary) {
+        int cont = 0;
+        for (int i = 0; i < musicLibrary.size(); i++) {
+            if (musicLibrary.get(i).getTitle().equals(title.trim())) {
+                playList.add(musicLibrary.get(i));
+                cont++;
+                break;
+            }
+        }
+        if (cont == 0) {
+            System.out.println("error no se encontro la cancion"
+                    + " pruebe con otro titulo o escriba el nombre exacto de la cancion");
+        }
+        for (int i = 0; i < playList.size(); i++) {
+            System.out.println(playList.get(i).getTitle());
         }
 
     }
