@@ -118,7 +118,7 @@ public class Main {
             }
         }
         for (int i = 0; i < cont; i++) {
-            System.out.println("Titulo  " + GenderFilter.get(i).getTitle() + " " + GenderFilter.get(i).getGender());
+            System.out.println("Titulo:  " + GenderFilter.get(i).getTitle() + " Genero: " + GenderFilter.get(i).getGender());
         }
 
     }
