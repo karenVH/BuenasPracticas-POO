@@ -184,7 +184,7 @@ public class Main {
                 if (musicLibrary.get(x).getDuration() > musicLibrary.get(x + 1).getDuration()) {
                     aux = musicLibrary.get(x);
                     musicLibrary.set(x, musicLibrary.get(x + 1));
-                    musicLibrary.set(x - 1, aux);
+                    musicLibrary.set(x + 1, aux);
                 }
             }
         }
@@ -213,7 +213,7 @@ public class Main {
 
         }
         for (int i = 0; i < 5; i++) {
-            System.out.println(musicLibrary.get(i).getTitle());
+            System.out.println(musicLibrary.get(i).getTitle() + " " + musicLibrary.get(i).getDate().get(Calendar.YEAR));
         }
     }
 
