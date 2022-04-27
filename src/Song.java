@@ -36,12 +36,12 @@ public class Song {
     /**
      * Metodo Constructor para una canción
      * 
-     * @param title
-     * @param year
-     * @param duration
-     * @param gender
-     * @param cover
-     * @param description
+     * @param title Titulo de la canción
+     * @param year Año de la cancion
+     * @param duration Duracion de la cancion
+     * @param gender Genero de la cancion
+     * @param cover Portada de la cancion
+     * @param description Descripcion de la cancion
      */
     public Song(String title, int year, double duration, String gender, String cover, String description) {
         this.title = title;
@@ -57,119 +57,115 @@ public class Song {
     /**Getters y Seetters */
 
     /**
-     * 
-     * @return
+     * Metodo para obtener del identificador unico
+     * @return numero unico
      */
     public UUID getIdentifier() {
         return identifier;
     }
 
     /**
-     * 
-     * @param identifier
+     * Metodo para mostrar el identificador unico
+     * @param identifier numero unico
      */
     public void setIdentifier(UUID identifier) {
         this.identifier = identifier;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para obtener el titulo de la cancion
+     * @return Titulo de l cancion
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * 
-     * @param title
+     * Metodo para mostrar el titulo de la cancion
+     * @param title Titulo de la cancion
      */
     public void setTitle(String title) {
         this.title = title;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para obtener la fecha(Solo año) de la cancion
+     * @return fecha de la cancion
      */
     public Calendar getDate() {
         return date;
     }
 
     /**
-     * 
-     * @param date
+     * Metodo para mostrar la fecha(solo año) de la cancion
+     * @param date fecha de la cancion
      */
     public void setDate(Calendar date) {
         this.date = date;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para obtener la duracion de la cancion
+     * @return duracion de la cancion
      */
     public double getDuration() {
         return duration;
     }
 
     /**
-     * 
-     * @param duration
+     * Metodo para mostrar la duracion de la cancion
+     * @param duration duracion de la cancion
      */
     public void setDuration(double duration) {
         this.duration = duration;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para otener el genero de la cancion
+     * @return genero de la cancion
      */
     public String getGender() {
         return gender;
     }
 
     /**
-     * 
-     * @param gender
+     * Metodo para mostrar el genero de la cancion
+     * @param gender genero de la cancion
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para obtener la portada de la cancion
+     * @return Portada de la cancion
      */
     public String getCover() {
         return cover;
     }
 
     /**
-     * 
-     * @param cover
+     * Metodo para mostrar la portada de la cancion
+     * @param cover Portada de la cancion
      */
     public void setCover(String cover) {
         this.cover = cover;
     }
 
     /**
-     * 
-     * @return
+     * Metodo para obtener la descripcion de la cancion
+     * @return Descripcion de la cancion
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * 
-     * @param description
+     * Metodo para mostrar la descripcion de la cancion
+     * @param description Descripcion
      */
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-    
-
     
 }

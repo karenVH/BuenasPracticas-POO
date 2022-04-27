@@ -24,11 +24,11 @@ public class Main {
         Scanner entry2 = new Scanner(System.in);
         // Arrray donde se almacenan las canciones de la biblioteca de musica
         ArrayList<Song> musicLibrary = new ArrayList<Song>();
-        // Canciones filtradas por genero
+        // Array donde se almacenan las Canciones filtradas por genero
         ArrayList<Song> GenderFilter = new ArrayList<Song>();
-        // Canciones filtradas por año
+        // Array donde se almacenan Canciones filtradas por año
         ArrayList<Song> YearFilter = new ArrayList<Song>();
-        // PlayList creada
+        //Array donde se almacenan las canciones para crear la playlist
         ArrayList<Song> playList = new ArrayList<Song>();
 
         // Canciones agregadas a la biblioteca de musica
@@ -70,28 +70,28 @@ public class Main {
                     MusicByGender(musicLibrary, musicGender, GenderFilter);
                     break;
                 case 3:
-                    System.out.print("Digite el año , para filtrar las canciones");
+                    System.out.print("Digite el año , para filtrar las canciones: ");
                     int musicYear = entry.nextInt();
                     MusicByYear(musicLibrary, musicYear, YearFilter);
                     break;
                 case 4:
-                    System.out.println("Las canciones se orgnizaran de Menor a Mayor duracion");
+                    System.out.println("Las canciones se orgnizaran de Menor a Mayor duracion: ");
                     orderByShorterDuration(musicLibrary);
                     break;
                 case 5:
-                    System.out.println("Las canciones se orgnizaran de Mayor a menor duracion");
+                    System.out.println("Las canciones se orgnizaran de Mayor a menor duracion: ");
                     orderByLongerDuraton(musicLibrary);
                     break;
                 case 6:
-                    System.out.println("se va a escuchar las canciones organizadas por fecha (año)");
+                    System.out.println("se va a escuchar las canciones organizadas por año: ");
                     OrderByYear(musicLibrary);
                     break;
                 case 7:
                     System.out.println("Crear playlist");
-                    System.out.print("Digita el titulo de la cancion que deseas agregar a tu playlist ");
+                    System.out.print("Digita el titulo de la cancion que deseas agregar a tu playlist:  ");
                     String title = entry2.nextLine();
                     createPlaylist(title, playList, musicLibrary);
-                    System.out.println("Si desea agregar otra cancion digite 1, d elo contrario digite 0");
+                    System.out.println("Si desea agregar otra cancion digite 1, d elo contrario digite 0: ");
                     break;
                 default:
                     break;
@@ -104,7 +104,7 @@ public class Main {
     /**
      * Metodo para filtrar canciones por genero
      * 
-     * @param musicLibrary
+     * @param musicLibrary Biblioteca de canciones
      * @param musicGender
      * @param GenderFilter
      */
