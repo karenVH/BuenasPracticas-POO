@@ -130,17 +130,17 @@ public class Main {
      * @param yearSong
      * @param YearFilter
      */
-    public static void MusicByYear(ArrayList<Song> musicLibrary, int yearSong,
+    public static void MusicByYear(ArrayList<Song> musicLibrary, int musicYear,
         ArrayList<Song> YearFilter) {
         int cont = 0;
         for (int i = 0; i < musicLibrary.size(); i++) {
 
-            if (musicLibrary.get(i).getDate().get(Calendar.YEAR) == yearSong) {
+            if (musicLibrary.get(i).getDate().get(Calendar.YEAR) == musicYear) {
                 YearFilter.add(musicLibrary.get(i));
                 cont++;
             }
         }
-        System.out.println("estas son las canciones filtradas por el año " + yearSong);
+        System.out.println("estas son las canciones filtradas por el año " + musicYear);
         for (int i = 0; i < cont; i++) {
 
             System.out.println(YearFilter.get(i).getTitle() + " " + YearFilter.get(i).getDate().get(Calendar.YEAR) );
