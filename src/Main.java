@@ -143,7 +143,7 @@ public class Main {
         System.out.println("estas son las canciones filtradas por el año " + yearSong);
         for (int i = 0; i < cont; i++) {
 
-            System.out.println(YearFilter.get(i).getTitle() + " " + YearFilter.get(i).getDate());
+            System.out.println(YearFilter.get(i).getTitle() + " " + YearFilter.get(i).getDate().get(Calendar.YEAR) );
 
         }
 
