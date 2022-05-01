@@ -15,5 +15,5 @@
 
 ## Estructura
 Este proyecto contiene una carpeta con los archivos de codigo fuente y un archivo README.md
-- ´src´: carpeta con archivos de codigo fuente
-- ´README.md´
+- `src`: carpeta con archivos de codigo fuente
+- `README.md`
